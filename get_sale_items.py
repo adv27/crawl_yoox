@@ -35,8 +35,7 @@ def get_items(url: str = None):
     if url is not None:
         html_code = get_html_code(url=url)
         soup = BeautifulSoup(html_code, 'html.parser')
-        items = soup.find_all('div', {'id': re.compile('^item_')})
-        return items
+        return soup.find_all('div', {'id': re.compile('^item_')})
     return None
 
 
